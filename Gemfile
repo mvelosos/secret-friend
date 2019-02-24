@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'devise'
+gem 'materialize-sass'
+gem 'material_icons'
+gem 'redis'
+gem 'sidekiq'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
@@ -36,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
@@ -47,6 +54,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem "factory_bot_rails"
+  gem "ffaker"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
